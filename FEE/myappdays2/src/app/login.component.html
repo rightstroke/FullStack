@@ -1,0 +1,73 @@
+<div class="wrapper">
+  <form
+    [formGroup]="loginForm"
+    class="form-signin"
+    (ngSubmit)="submitForm(loginForm.value)"
+  >
+    <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
+    <hr class="colorgraph" />
+    <br />
+
+    <div
+      class="form-group"
+      [ngClass]="{'has-error':!loginForm.controls['userid'].valid && loginForm.controls['userid'].touched}"
+    >
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Doe"
+        name="userid"
+        [formControl]="loginForm.controls['userid']"
+      />
+      <div
+        *ngIf="loginForm.controls['userid'].hasError('required') && loginForm.controls['userid'].touched"
+        class="alert alert-danger"
+      >
+        Enter Valid User ID.
+      </div>
+    </div>
+    <div
+      class="form-group"
+      [ngClass]="{'has-error':!loginForm.controls['password'].valid && loginForm.controls['password'].touched}"
+    >
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Doe"
+        name="password"
+        [formControl]="loginForm.controls['password']"
+      />
+      <div
+        *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched"
+        class="alert alert-danger"
+      >
+        You must include a last name.
+      </div>
+      <div
+        *ngIf="loginForm.controls['password'].hasError('minlength') && loginForm.controls['password'].touched"
+        class="alert alert-danger"
+      >
+        Your last name must be at least 5 characters long.
+      </div>
+      <div
+        *ngIf="loginForm.controls['password'].hasError('maxlength') && loginForm.controls['password'].touched"
+        class="alert alert-danger"
+      >
+        Your last name cannot exceed 10 characters.
+      </div>
+    </div>
+    <div class="form-group">
+      <button
+        [disabled]="!loginForm.valid"
+        type="submit"
+        class="btn btn-primary"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+<p>The sum of 1 + 1 is {{1 + 1}}.</p>
+<p>The sum of 1 + 1 is {{1 + 1}}. {{readVal()}}</p>
+<p>The sum of 1 + 1 is {{1 + 1 + readVal()}}</p>
+{{diagnostic}}

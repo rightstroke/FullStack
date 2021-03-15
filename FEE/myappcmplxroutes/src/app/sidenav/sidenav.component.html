@@ -1,0 +1,7 @@
+<!-- Sidebar -->
+<div class="bg-light border-right" id="sidebar-wrapper" *ngIf="auth.isLoggedin">
+    <div class="sidebar-heading">Start Bootstrap </div>
+    <div class="list-group list-group-flush">
+        <a *ngFor="let m of sidemenus" [routerLink]="m.path" class="list-group-item list-group-item-action bg-light">{{m.description}}</a>
+    </div>
+</div>

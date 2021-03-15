@@ -1,0 +1,27 @@
+<div class="col-sm-3 col-md-2 sidebar" *ngIf="this.authService.isLoggedIn">
+  <ul class="nav nav-sidebar" >
+
+    <li *ngFor="let menu of menues" [class.selected]="menu==selectedMenu" (click)="onSelect(menu)">
+      <a routerLink="{{menu.url}}" routerLinkActive="active">{{menu.name}}</a>
+    </li>
+
+  </ul>
+</div>
+
+
+
+<!--
+<li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+<li><a href="#">Reports</a></li>
+<li><a href="#">Analytics</a></li>
+<a routerLink="sform" routerLinkActive="active">SimpleForm</a>
+
+<ul>
+  <li *ngFor="let menu of menues"
+    [class.selected]="menu == selectedMenu"
+    (click)="onSelect(menu)">
+    <span class="badge">{{menu.url}}</span> {{menu.name}}
+  </li>
+</ul>
+
+-->

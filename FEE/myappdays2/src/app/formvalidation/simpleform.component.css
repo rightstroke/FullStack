@@ -1,0 +1,10 @@
+.navbar-form .input-group {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+
+    .form-control,
+    .input-group-btn {
+        float: left;
+    }
+}

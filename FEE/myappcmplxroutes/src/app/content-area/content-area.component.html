@@ -1,0 +1,38 @@
+ <!-- Page Content -->
+ <div id="page-content-wrapper">
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" *ngIf="auth.isLoggedin"> 
+      <!--<button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>-->
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item active" >
+            <a class="nav-link" routerLink="login">Login <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active" >
+            <a class="nav-link" [routerLink]="[{ outlets: { 'sbar': ['lhsnav','fundtransfer'] } }]">FundsTransfer</a>
+          </li>
+          <li class="nav-item active" >
+            <a class="nav-link" [routerLink]="[{ outlets: { 'sbar': ['lhsnav','Demat'] } }]">Demat</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <!--<h1 class="mt-4">Simple Sidebar</h1>
+      <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+      -->
+      <h1 class="mt-4">Simple Sidebar</h1>
+      <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+      <p>
+        <router-outlet></router-outlet>
+      </p>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->

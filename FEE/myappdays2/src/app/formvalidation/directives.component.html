@@ -1,0 +1,21 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    
+    <p>Attribute Directives</p>
+    <!-- ngStyle ngSwitch ngModel ngClass-->
+    <ul *ngFor="let item of items,let i=index">
+        <li class="item" [ngStyle]="{'backgroundColor':getBgColor(item.type)}"> 
+            {{item.name}}
+        </li>
+    </ul>
+
+    <p>Structura Directives</p>
+    <button (click)="toggleDiv()">Toggle</button>
+
+    <div class="showDiv" *ngIf=showDiv>I am Visible</div>
+
+    <p>Custom Directives</p>
+    <div>My Data</div>
+
+    <div appAlert [error]="loginError" *ngIf="loginError">My Data</div>
+
+</div>
