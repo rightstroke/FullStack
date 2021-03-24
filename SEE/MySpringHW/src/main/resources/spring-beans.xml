@@ -1,0 +1,31 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+	<!-- DI -->
+	<bean id="mycar" class="com.rsc.srm.mybean.Car" init-method="init" destroy-method="kill">
+		<property name="vin" value="vin87654321" />
+		<property name="color" value="Sunshine Yellow" />
+		<property name="dr"><ref bean="dr"/></property>
+	</bean>
+	
+	<bean id="mycar2" class="com.rsc.srm.mybean.Car" init-method="init" destroy-method="kill" autowire="byType">
+		<property name="vin" value="vin12000000" />
+		<property name="color" value="Sunshine Orange" />
+	</bean>
+	
+	<bean id="mycar3" class="com.rsc.srm.mybean.Car" init-method="init" destroy-method="kill" autowire="byType">
+		<property name="vin" value="vin888888888" />
+		<property name="color" value="Sunshine Apple" />
+	</bean>
+	
+	
+
+	<bean id="dr" class="com.rsc.srm.mybean.Door">
+		<property name="tintedGlass" value="false" />
+		<property name="numofDoors" value="3" />
+	</bean>
+
+</beans>
