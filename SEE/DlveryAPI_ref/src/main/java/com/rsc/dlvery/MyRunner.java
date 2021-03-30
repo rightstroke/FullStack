@@ -28,6 +28,21 @@ public class MyRunner implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) throws Exception {
+        //System.out.println(repo.getCustomers());
+        System.out.println("=======================");
+        //repo.getCustomersByID(6).forEach(System.out::println);
+        //System.out.println(repo.getCustomersByID(6));
+        List<Object[]> datas = repo.getCustomersByID(6);
+        
+        for(int i=0;i<datas.size();i++) {
+            Object[] obj = datas.get(i);
+            System.out.println(obj[0] + "," + obj[1] + "," + obj[2]);
+        }
+    }
+
+    
+    @Transactional
+    public void run1(String... args) throws Exception {
 
         //M2M
         Role role1 = new Role();
