@@ -1,0 +1,4 @@
+<p>login works!</p>
+username <input type="text" [(ngModel)]="username" (onModelChange)="username=$event"/>
+password <input type="password" [(ngModel)]="password" (onModelChange)="password=$event"/>
+<button (click)="doLogin()">DoLogin</button>  
