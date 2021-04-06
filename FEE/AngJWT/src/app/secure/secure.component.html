@@ -1,0 +1,6 @@
+<p>secure works!</p>
+<button (click)="getc()">Get Country</button>
+
+<div *ngFor="let c of countries;let i = index">
+    {{i}} - {{c.cd}}-{{c.name}}
+</div>
