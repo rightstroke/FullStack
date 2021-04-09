@@ -28,9 +28,9 @@ public interface CustomerRepository extends JpaRepository<Customer,Long>{
     @Query("Update Customer c set c.fname=:fname where c.custid=:id")
     public void updateCustomer(String fname,int id);
 
-    @Query("select new  com.rsc.dlvery.entity.custom.CustomerCityJoin(c.custid,c.fname,c.lname,c.email,a.country) from Customer c,Address a where a.city=:city")
+    @Query("select new com.rsc.dlvery.entity.custom.CustomerCityJoin(c.custid,c.fname,c.lname,c.email,a.country) from Customer c,Address a where a.city=:city")
     List<CustomerCityJoin> getCustomerFromAnyCity(String city);
 
-    @Query("Standard ANSI SQL HERE",nativeQuery=true)
-    List<Object[]> getNativeCustomerFromAnyCity(String city);
+    // @Query("Standard ANSI SQL HERE",nativeQuery=true)
+    // List<Object[]> getNativeCustomerFromAnyCity(String city);
 }

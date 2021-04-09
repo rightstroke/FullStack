@@ -22,8 +22,7 @@ public class CustomerManagerImpl implements CustomerManager {
     public Customer save(Customer cust) {
         repo.save(cust);
         
-        
-        
+                
         //List<Object[]> obj = repo.getCustomerById(cust.getCustid());
         
         // System.out.println(obj.size());
