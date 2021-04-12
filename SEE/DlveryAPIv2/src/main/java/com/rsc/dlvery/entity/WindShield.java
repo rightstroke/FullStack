@@ -23,4 +23,6 @@ public class WindShield extends AutoParts  {
         return "WindShield [typeOfGlas=" + typeOfGlas + "]";
     }
 
+
+
 }

@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import com.rsc.dlvery.entity.Address;
 import com.rsc.dlvery.entity.Animal;
 import com.rsc.dlvery.entity.Bat;
+import com.rsc.dlvery.entity.CamShaft;
 import com.rsc.dlvery.entity.Cat;
 import com.rsc.dlvery.entity.Customer;
 import com.rsc.dlvery.entity.CustomerType;
@@ -16,6 +17,7 @@ import com.rsc.dlvery.entity.GrocerryOrder;
 import com.rsc.dlvery.entity.Order;
 import com.rsc.dlvery.entity.Role;
 import com.rsc.dlvery.entity.User;
+import com.rsc.dlvery.entity.WindShield;
 import com.rsc.dlvery.repo.AnimalRepository;
 import com.rsc.dlvery.repo.AutoPartsRepository;
 import com.rsc.dlvery.repo.OrderRepository;
@@ -92,6 +94,26 @@ public class MyCommandLineRunner implements CommandLineRunner {
         }
 
         System.out.println("RECORDS SAVE>2>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+        CamShaft cs = new CamShaft();
+        cs.setNode(5);
+        cs.setProdCode("BOSCH");
+        cs.setType("4WCam");
+        cs.setWeight(150);
+
+        WindShield ws = new WindShield();
+        ws.setProdCode("SAINTGOBAIN");
+        ws.setType("3EAuto");
+        ws.setTypeOfGlas("CATE1");
+
+        autoPartsRepo.save(cs);
+        autoPartsRepo.save(ws);
+
+        System.out.println("RECORDS SAVE>3>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+        System.out.println(autoPartsRepo.getAutoPartsByid(35));
+
+        System.out.println(autoPartsRepo.getAutoPartsByid2(42));
 
         // System.out.println("############### Many2Many Inserts Started");
         // User u1 = new User();

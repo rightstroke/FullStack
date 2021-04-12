@@ -18,8 +18,6 @@ public class AutoParts {
 
     private String type;
 
-  
-
     public String getProdCode() {
         return prodCode;
     }
