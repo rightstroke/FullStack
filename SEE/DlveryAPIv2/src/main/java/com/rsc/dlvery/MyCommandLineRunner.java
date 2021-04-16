@@ -42,6 +42,8 @@ public class MyCommandLineRunner implements CommandLineRunner {
     @Transactional
     public void run(String... args) throws Exception {
 
+        List lstTemp =new ArrayList();
+
         GrocerryOrder gOrder = new GrocerryOrder();
         gOrder.setExpiry(new java.util.Date());
         gOrder.setIsFruits(true);
@@ -83,6 +85,7 @@ public class MyCommandLineRunner implements CommandLineRunner {
         animalRepo.save(bat);
 
         List<Animal> animals = animalRepo.getAnimals();
+        
         for(Animal a : animals) {
             if (a instanceof Cat) {
                 Cat c = (Cat) a;
@@ -114,6 +117,16 @@ public class MyCommandLineRunner implements CommandLineRunner {
         System.out.println(autoPartsRepo.getAutoPartsByid(35));
 
         System.out.println(autoPartsRepo.getAutoPartsByid2(42));
+
+        for(int i=0;i<100000;i++) {
+            WindShield ws1 = new WindShield();
+            ws1.setProdCode("SAINTGOBAIN");
+            ws1.setType("3EAuto");
+            ws1.setTypeOfGlas("CATE1");
+            Thread.sleep(10);
+            System.out.println(ws1.toString());
+            lstTemp.add(ws1);
+        }
 
         // System.out.println("############### Many2Many Inserts Started");
         // User u1 = new User();
