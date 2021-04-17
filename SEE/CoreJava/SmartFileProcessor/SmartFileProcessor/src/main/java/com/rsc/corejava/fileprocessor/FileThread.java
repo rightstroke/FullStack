@@ -9,7 +9,7 @@ public class FileThread implements Runnable {
 
     @Override
     public void run() {
-        
+        System.out.println("=====");
         FileProcessor.getInstance().processPayload(payloads);
         //for(TextFile tf : payloads) {
         //    System.out.println(Thread.currentThread().getName() + "," + tf);

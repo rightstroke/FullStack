@@ -1,0 +1,8 @@
+com/rsc/corejava/fileprocessor/model/TextFile.class
+com/rsc/corejava/fileprocessor/FileProcessor.class
+com/rsc/corejava/fileprocessor/FileManager.class
+com/rsc/corejava/fileprocessor/LineDataComparator.class
+com/rsc/corejava/fileprocessor/App.class
+com/rsc/corejava/fileprocessor/FileThread.class
+com/rsc/corejava/fileprocessor/model/LineData.class
+com/rsc/corejava/fileprocessor/BaseManager.class

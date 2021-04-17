@@ -68,9 +68,13 @@ public class FileProcessor {
 
     }
 
-    private void collectTheData(LineData lData) {
-        System.out.println(lData);
-        tMap.put(lData, lData.getId());
+    private void  collectTheData(LineData lData) {
+       
+        synchronized(this) {
+            tMap.put(lData, lData.getId());
+        }
+       
+        
     }
 
 }
