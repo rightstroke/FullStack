@@ -10,9 +10,11 @@ public class FileThread implements Runnable {
     @Override
     public void run() {
         
-        for(TextFile tf : payloads) {
-            System.out.println(Thread.currentThread().getName() + "," + tf);
-        }
+        FileProcessor.getInstance().processPayload(payloads);
+        //for(TextFile tf : payloads) {
+        //    System.out.println(Thread.currentThread().getName() + "," + tf);
+        //    
+        //}
     }
 
     public FileThread(List<TextFile> payloads) {
